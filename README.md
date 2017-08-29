@@ -118,7 +118,7 @@ printBadges(['Ada', 'Brendan', 'Ali']);
 After the loop completes, have the function return the original array.
 
 ## The `while` loop
-The `while` loop is similar to an `for` statement in that it will keep looping as long as the condition evaluates to `true`. However, the idea behind a `for` loop is that it should loop a set number of times (e.g., start with `i = 0` and loop while `i < 25`). A `while` loop, on the other hand, is designed to loop an indefinite amount of times — it should keep looping **while** the condition is `true` or, said differently, **until** the condition is `false`. There isn't a definite limit like "25 times" placed upon it.
+The `while` loop is similar to a `for` loop in that it will keep looping as long as the condition evaluates to `true`. However, the idea behind a `for` loop is that it should loop a set number of times (e.g., start with `i = 0` and loop while `i < 25`). A `while` loop, on the other hand, is designed to loop an indefinite amount of times — it should keep looping **while** the condition is `true` or, said differently, **until** the condition is `false`. There isn't a definite limit like "25 times" placed upon it.
 
 A `while` loop has the following structure:
 ```js
