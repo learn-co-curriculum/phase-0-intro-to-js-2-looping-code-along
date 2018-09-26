@@ -19,10 +19,10 @@ In programming terms, we can think of our **collection** of gifts as an
 **array** and the act of wrapping them as a function. For example:
 
 ```js
-const gifts = ["teddy bear", "drone", "doll"];
+const gifts = ['teddy bear', 'drone', 'doll'];
 
 function wrapGift(gift) {
-  console.log(`Wrapped ${gift} and added a bow!`);
+	console.log(`Wrapped ${gift} and added a bow!`);
 }
 ```
 
@@ -80,7 +80,7 @@ The code below will announce our next ten birthdays:
 
 ```js
 for (let age = 30; age < 40; age++) {
-  console.log(`I'm ${age} years old. Happy birthday to me!`);
+	console.log(`I'm ${age} years old. Happy birthday to me!`);
 }
 
 // LOG: I'm 30 years old. Happy birthday to me!
@@ -120,14 +120,14 @@ condition evaluates to `true`.
 rewrite our gift-wrapping action above as a `for` loop:
 
 ```js
-const gifts = ["teddy bear", "drone", "doll"];
+const gifts = ['teddy bear', 'drone', 'doll'];
 
 function wrapGifts(gifts) {
-  for (let i = 0; i < gifts.length; i++) {
-    console.log(`Wrapped ${gifts[i]} and added a bow!`);
-  }
+	for (let i = 0; i < gifts.length; i++) {
+		console.log(`Wrapped ${gifts[i]} and added a bow!`);
+	}
 
-  return gifts;
+	return gifts;
 }
 
 wrapGifts(gifts);
@@ -164,7 +164,7 @@ Inside the loop, use `console.log()` to print out a badge for each employee, as
 follows:
 
 ```js
-printBadges(["Ada", "Brendan", "Ali"]);
+printBadges(['Ada', 'Brendan', 'Ali']);
 // LOG: Welcome Ada! You are employee #1.
 // LOG: Welcome Brendan! You are employee #2.
 // LOG: Welcome Ali! You are employee #3.
@@ -198,11 +198,11 @@ run. Often, this is because the condition depends on a dynamic value.
 
 ```js
 function maybeTrue() {
-  return Math.random() >= 0.5;
+	return Math.random() >= 0.5;
 }
 
 while (maybeTrue()) {
-  console.log("And I ran... I ran so far away!");
+	console.log('And I ran... I ran so far away!');
 }
 ```
 
@@ -224,7 +224,7 @@ an example of a `while` loop with a defined exit strategy:
 let countdown = 10;
 
 while (countdown > 0) {
-  console.log(--countdown);
+	console.log(--countdown);
 }
 ```
 
@@ -234,11 +234,13 @@ We're going to create a little game for our Flatbook users to play when they're
 bored. Create a function named `tailsNeverFails()` that takes no arguments. In
 the function body, use a `while` loop with a condition that simulates a coin
 flip (two equally likely outcomes). For inspiration, check out the `maybeTrue()`
-example above. If the condition evaluates to `true`, the coin landed on 'Tails'
-and is flipped again. If the condition evaluates to `false`, the coin landed on
-'Heads', and the 'Tails' streak is broken. At the end of the function, `return`
-a message to the user indicating how many times the coin landed on 'Tails' in a
-row, e.g.:
+example above.
+
+If the `Math.random()` evaluates to greater than or equal to `0.5`, the coin
+landed on 'Tails' and is flipped again. If the `Math.random()` evaluates to less
+than `0.5`, the coin landed on 'Heads', and the 'Tails' streak is broken. At the
+end of the function, `return` a message to the user indicating how many times
+the coin landed on 'Tails' in a row, e.g.:
 
 ```js
 tailsNeverFails();
