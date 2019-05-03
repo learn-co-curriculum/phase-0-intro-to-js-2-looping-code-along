@@ -1,4 +1,4 @@
-# Looping Code-along
+# Looping Lab
 
 ## Objectives
 
@@ -19,10 +19,10 @@ In programming terms, we can think of our **collection** of gifts as an
 **array** and the act of wrapping them as a function. For example:
 
 ```js
-const gifts = ['teddy bear', 'drone', 'doll'];
+const gifts = ["teddy bear", "drone", "doll"];
 
 function wrapGift(gift) {
-	console.log(`Wrapped ${gift} and added a bow!`);
+  console.log(`Wrapped ${gift} and added a bow!`);
 }
 ```
 
@@ -72,8 +72,8 @@ for ([initialization]; [condition]; [iteration]) {
   - Loop body
   - Code that runs on each pass through the loop.
 
-**_Usage_**: Use a `for` loop when you know exactly how many times you want the loop to run
-(for example, when you have an array of known size).
+**_Usage_**: Use a `for` loop when you know exactly how many times you want the
+loop to run (for example, when you have an array of known size).
 
 #### Examples
 
@@ -81,7 +81,7 @@ The code below will announce our next ten birthdays:
 
 ```js
 for (let age = 30; age < 40; age++) {
-	console.log(`I'm ${age} years old. Happy birthday to me!`);
+  console.log(`I'm ${age} years old. Happy birthday to me!`);
 }
 
 // LOG: I'm 30 years old. Happy birthday to me!
@@ -117,18 +117,18 @@ loop, we increment `age` to `32`, and so on.
 The **loop body** is the set of statements that we want to run when the
 condition evaluates to `true`.
 
-`for` loops are often used to iterate over every element in an array. Let's
+The `for` loop is often used to iterate over every element in an array. Let's
 rewrite our gift-wrapping action above as a `for` loop:
 
 ```js
-const gifts = ['teddy bear', 'drone', 'doll'];
+const gifts = ["teddy bear", "drone", "doll"];
 
 function wrapGifts(gifts) {
-	for (let i = 0; i < gifts.length; i++) {
-		console.log(`Wrapped ${gifts[i]} and added a bow!`);
-	}
+  for (let i = 0; i < gifts.length; i++) {
+    console.log(`Wrapped ${gifts[i]} and added a bow!`);
+  }
 
-	return gifts;
+  return gifts;
 }
 
 wrapGifts(gifts);
@@ -141,14 +141,14 @@ wrapGifts(gifts);
 We started our counter, `i`, at `0` because arrays have zero-based indexes. Our
 condition states that we should run the code in the loop body while `i` is less
 than `gifts.length` (`3` in the above example). Our iteration, `i++`, increments
-our counter by `1` at the end of each pass through the loop. In our loop body,
-notice that we reference `gifts[i]`. Since `i` starts out as `0`, during the
-first pass through the loop `gifts[i]` is `gifts[0]` is `'teddy bear'`. During
-the second pass through the loop, `gifts[i]` is `gifts[1]` is `'drone'`. And
-during the final pass through the loop, `gifts[i]` is `gifts[2]` is `'doll'`.
-After the third pass through the loop, we increment `i` to `3`, which is no
-longer less than `gifts.length`. Our condition evaluates to `false`, and we exit
-the loop.
+our counter by `1` at the end of each pass through the loop.
+
+In our loop body, notice that we reference `gifts[i]`. Since `i` starts out as
+`0`, during the first pass through the loop `gifts[i]` is `gifts[0]` is `'teddy bear'`. During the second pass through the loop, `gifts[i]` is `gifts[1]` is
+`'drone'`. And during the final pass through the loop, `gifts[i]` is `gifts[2]`,
+which is `'doll'`. After the third pass through the loop, we increment `i` to
+`3`, which is no longer less than `gifts.length`. Our condition evaluates to
+`false`, and we exit the loop.
 
 We'll encounter `for` loops again when we learn about iterating through object
 literals.
@@ -165,7 +165,7 @@ Inside the loop, use `console.log()` to print out a badge for each employee, as
 follows:
 
 ```js
-printBadges(['Ada', 'Brendan', 'Ali']);
+printBadges(["Ada", "Brendan", "Ali"]);
 // LOG: Welcome Ada! You are employee #1.
 // LOG: Welcome Brendan! You are employee #2.
 // LOG: Welcome Ali! You are employee #3.
@@ -176,15 +176,9 @@ After the loop completes, have the function return the original array.
 
 ## The `while` loop
 
-The `while` loop is similar to a `for` loop in that it will keep looping as long
-as the condition evaluates to `true`. However, the idea behind a `for` loop is
-that it should loop a set number of times (e.g., start with `i = 0` and loop
-while `i < 25`). A `while` loop, on the other hand, is designed to loop an
-indefinite amount of times — it should keep looping **while** the condition is
-`true` or, said differently, **until** the condition is `false`. There isn't a
-definite limit like "25 times" placed upon it.
-
-A `while` loop has the following structure:
+The `while` loop is similar to a `for` loop, repeating an action in a loop based
+on a condition. Both will continue to loop until that condition evaluates to
+`false`. Unlike `for`, `while` only requires condition and loop statements:
 
 ```js
 while ([condition]) {
@@ -192,79 +186,128 @@ while ([condition]) {
 }
 ```
 
-**_Usage_**: A `while` loop is best used when we don't know how many times a loop needs to
-run. Often, this is because the condition depends on a dynamic value.
-
-#### Example
+The initialization and iteration statements of the `for` loop have not
+disappeared, though. In fact, we could rewrite our original `for` loop gift
+wrapping example using a `while` loop and achieve the exact same result:
 
 ```js
-function maybeTrue() {
-	return Math.random() >= 0.5;
+const gifts = ["teddy bear", "drone", "doll"];
+
+function wrapGifts(gifts) {
+  let i = 0; // the initialization!
+  while (i < gifts.length) {
+    console.log(`Wrapped ${gifts[i]} and added a bow!`);
+    i++; // the iteration!
+  }
+
+  return gifts;
 }
 
-while (maybeTrue()) {
-	console.log('And I ran... I ran so far away!');
+wrapGifts(gifts);
+// LOG: Wrapped teddy bear and added a bow!
+// LOG: Wrapped drone and added a bow!
+// LOG: Wrapped doll and added a bow!
+// => ["teddy bear", "drone", "doll"]
+```
+
+Notice that we've just moved the initialization and iteration statements -
+declaring the `i` variable outside the loop, and now incrementing it _inside_
+the loop.
+
+**CAUTION**: Unlike `for`, it is possible when using `while` loops forget to
+involve iteration, since it is not strictly required. The result is that the
+`while` condition can potentially _always_ evaluate to `true`, causing an
+infinite loop!
+
+Because of this design, `while` loops are sometimes used when we _want_
+a loop to run an indeterminate amount of times. If we were pseudocoding out a
+program for planting a garden, we might use `while` to organize the work:
+
+```js
+function plantGarden() {
+  let keepWorking = true;
+  while (keepWorking) {
+    chooseSeedLocation();
+    plantSeed();
+    waterSeed();
+    keepWorking = checkForMoreSeeds();
+  }
 }
 ```
 
-In this example, `maybeTrue()` returns `true` half the time and `false` half the
-time. Our loop runs until `maybeTrue()` returns `false`, so, theoretically, the
-body of the loop might **never** run (if the first evaluation of `maybeTrue()`
-returns `false`) or it might run forever (if `maybeTrue()` goes on an incredible
-streak with `Math.random()` never returning anything below `0.5`). We've used a
-`while` loop because we don't have any specific number to count up or down to in
-our loop; we just want it to run until the condition is no longer met.
+We can imagine that _while_ we have seeds, we take the same steps over and over.
+Choose a location for a seed; plant it; water it. Then, check if there are more
+seeds. If _not_, do not keep working.
 
-We can also use a `while` loop in place of a `for` loop. We just have to
-remember to make sure the condition updates with each pass through the loop so
-that the loop eventually terminates. Otherwise, it'll run forever, and we'll
-have to throw our overheating computer out the window and buy a new one. Here's
-an example of a `while` loop with a defined exit strategy:
+## When to Use `for` and `while`
+
+JavaScript, like many programming languages, provides a variety of looping
+options. Loops like `for` and `while` are actually just slight variations of the
+same process. By providing a variety, we as programmers have a larger vocabulary
+to work with.
+
+Often, you will see `while` loops simply being used as an alternative to `for`
+loops:
 
 ```js
-let countdown = 10;
-
-while (countdown > 0) {
-	console.log(--countdown);
+let countup = 0;
+while (countup < 10) {
+  console.log(countup++);
 }
 ```
 
-### Assignment
-
-We're going to create a little game for our Flatbook users to play when they're
-bored. Create a function named `tailsNeverFails()` that takes no arguments. In
-the function body, use a `while` loop with a condition that simulates a coin
-flip (two equally likely outcomes). For inspiration, check out the `maybeTrue()`
-example above.
-
-If the `Math.random()` evaluates to greater than or equal to `0.5`, the coin
-landed on 'Tails' and is flipped again. If the `Math.random()` evaluates to less
-than `0.5`, the coin landed on 'Heads', and the 'Tails' streak is broken. At the
-end of the function, `return` a message to the user indicating how many times
-the coin landed on 'Tails' in a row, e.g.:
+This is perfectly fine as an alternative way to describe:
 
 ```js
-tailsNeverFails();
-// => "You got 3 tails in a row!"
-
-tailsNeverFails();
-// => "You got 0 tails in a row!"
-
-tailsNeverFails();
-// => "You got 5 tails in a row!"
+for (let countup = 0; countup < 10; countup++) {
+  console.log(countup);
+}
 ```
-
-## Conclusion
 
 If you're feeling a bit lost about when to use a `for` vs. a `while` loop, take
 a deep breath. Most of the time, a regular `for` loop will suffice. It's by far
 the most common looping construct in JavaScript. A general heuristic for
 choosing which loop to use is to first try a `for` loop. If that doesn't serve
 your purposes, then go ahead and try a `while` or [`do...while`][do...while]
-loop. Also, remember that you can always refer to the [documentation on these
-loops][loops and iteration] at any time. After some time programming in
-JavaScript, writing a `for` loop will come as naturally to you as wrapping one
-gift after another.
+loop. Also, remember that you can always refer to the
+[documentation on these loops][loops and iteration] at any time.
+
+Just don't forget - with `while`, make sure you are updating the condition on
+each loop so that the loop eventually terminates!
+
+## Assignment
+
+To get more acquainted with `while`, your task is to write a function,
+`countdown`, that takes in any positive integer and, starting from that number,
+counts down to zero using `console.log()`. So, when written if you were to run
+
+```js
+countdown(10);
+```
+
+It would actually log _11_ times, including 10:
+
+```text
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+```
+
+## Conclusion
+
+After some time programming in JavaScript, writing a `for` loop will come as
+naturally to you as wrapping one gift after another. Just as you slowly become
+comfortable using different words and vocabulary to better express yourself,
+you will become more acquainted with concepts like `for` and `while` until you
+are able to discern the nuanced usage between them.
 
 ## Resources
 
