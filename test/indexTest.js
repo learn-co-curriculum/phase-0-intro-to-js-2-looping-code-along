@@ -7,35 +7,28 @@ describe( 'index.js', () => {
     spy = sinon.spy( console, 'log' );
   } );
 
-  describe( 'printBadges()', () => {
+  describe( 'writeCard()', () => {
 
     afterEach( () => {
       spy.restore();
     } );
 
     it( 'invokes console.log() once for each element in the passed-in array', () => {
-      printBadges( [ 'Lisa', 'Kaitlin', 'Jan' ] );
+      writeCard( [ 'Lisa', 'Kaitlin', 'Jan' ], 'surprise' );
 
       expect( spy.callCount )
         .to.eq( 3 );
     } );
 
-    it( 'prints out a welcome badge for each employee', () => {
-      printBadges( [ 'Joe', 'Gabe' ] );
+    it( 'logs a thank you message for each name in the provided array', () => {
+      writeCard( [ 'Joe', 'Gabe' ], 'birthday' );
 
-      expect( spy.calledWithExactly( 'Welcome Joe! You are employee #1.' ), "Element was `Joe`, expected 'Welcome Joe! You are employee #1.'" )
+      expect( spy.calledWithExactly( 'Thank you, Joe, for the wonderful birthday gift!' ), "Thank you, Joe, for the wonderful birthday gift!" )
         .to.be
         .true;
-      expect( spy.calledWithExactly( 'Welcome Gabe! You are employee #2.' ), "Element was `Joe`, expected 'Welcome Joe! You are employee #2.'" )
+      expect( spy.calledWithExactly( 'Thank you, Gabe, for the wonderful birthday gift!' ), "Thank you, Gabe, for the wonderful birthday gift!" )
         .to.be
         .true;
-    } );
-
-    it( 'returns the passed-in array', () => {
-      const arr = [];
-
-      expect( printBadges( arr ) )
-        .to.eq( arr );
     } );
   } );
 
