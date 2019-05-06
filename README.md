@@ -155,24 +155,26 @@ literals.
 
 ### Assignment
 
-We're going to print out some welcome badges for new Flatbook employees. Build a
-function named `printBadges()` that accepts one argument, an array of employee
-names. Create a `for` loop with a counter that starts at `0` and increments at
-the end of each loop. The condition should halt the `for` loop after the last
-name in the array is printed out in the loop body.
+In the previous section, the `wrapGift()` function allowed us to take any array
+of gifts and loop over them, logging our own message. Let's practice that with a
+slightly different idea. To compliment our gift wrapping function, your task is
+to create a thank you card creator.
 
-Inside the loop, use `console.log()` to print out a badge for each employee, as
-follows:
+In `index.js`, build a function named `writeCard()` that accepts two arguments:
+an array of string names, and an event name. Create a `for` loop with a counter
+that starts at `0` and increments at the end of each loop. The condition should
+halt the `for` loop after the last name in the array is printed out in the loop
+body.
+
+Inside the loop, use `console.log()` to print out a thank you message for each
+name listed in the provided array, as follows:
 
 ```js
-printBadges(["Ada", "Brendan", "Ali"]);
-// LOG: Welcome Ada! You are employee #1.
-// LOG: Welcome Brendan! You are employee #2.
-// LOG: Welcome Ali! You are employee #3.
-// => ["Ada", "Brendan", "Ali"]
+writeCard(["Ada", "Brendan", "Ali"], "birthday");
+// LOG: Thank you, Ada, for the wonderful birthday gift.
+// LOG: Thank you, Brendan, for the wonderful birthday gift.
+// LOG: Thank you, Ali, for the wonderful birthday gift.
 ```
-
-After the loop completes, have the function return the original array.
 
 ## The `while` loop
 
@@ -194,10 +196,10 @@ wrapping example using a `while` loop and achieve the exact same result:
 const gifts = ["teddy bear", "drone", "doll"];
 
 function wrapGifts(gifts) {
-  let i = 0; // the initialization!
+  let i = 0; // the initialization moved OUTSIDE the body of the loop!
   while (i < gifts.length) {
     console.log(`Wrapped ${gifts[i]} and added a bow!`);
-    i++; // the iteration!
+    i++; // the iteration move INSIDE the body of the loop!
   }
 
   return gifts;
@@ -214,14 +216,13 @@ Notice that we've just moved the initialization and iteration statements -
 declaring the `i` variable outside the loop, and now incrementing it _inside_
 the loop.
 
-**CAUTION**: Unlike `for`, it is possible when using `while` loops forget to
-involve iteration, since it is not strictly required. The result is that the
-`while` condition can potentially _always_ evaluate to `true`, causing an
-infinite loop!
+> **CAUTION**: When using `while` loops, it is easy forget to involve iteration.
+> Leaving iteration out can result in a condition that _always_ evaluate to
+> `true`, causing an infinite loop!
 
-Because of this design, `while` loops are sometimes used when we _want_
+Because of their design, `while` loops are sometimes used when we _want_
 a loop to run an indeterminate amount of times. If we were pseudocoding out a
-program for planting a garden, we might use `while` to organize the work:
+program for planting a garden, we could use `while` to organize the work:
 
 ```js
 function plantGarden() {
