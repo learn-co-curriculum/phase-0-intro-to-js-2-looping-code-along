@@ -160,20 +160,28 @@ of gifts and loop over them, logging our own message. Let's practice that with a
 slightly different idea. To compliment our gift wrapping function, your task is
 to create a thank you card creator.
 
-In `index.js`, build a function named `writeCard()` that accepts two arguments:
+In `index.js`, build a function named `writeCards()` that accepts two arguments:
 an array of string names, and an event name. Create a `for` loop with a counter
 that starts at `0` and increments at the end of each loop. The condition should
 halt the `for` loop after the last name in the array is printed out in the loop
 body.
 
-Inside the loop, use `console.log()` to print out a thank you message for each
-name listed in the provided array, as follows:
+Inside the loop, create a custom message for each name from the provided array,
+thanking that person for their gift. Collect the messages in an array and
+return this array. For example:
 
 ```js
-writeCard(["Ada", "Brendan", "Ali"], "birthday");
-// LOG: Thank you, Ada, for the wonderful birthday gift.
-// LOG: Thank you, Brendan, for the wonderful birthday gift.
-// LOG: Thank you, Ali, for the wonderful birthday gift.
+writeCards(["Ada", "Brendan", "Ali"], "birthday");
+```
+
+Would produce the following array:
+
+```js
+[
+  "Thank you, Ada, for the wonderful birthday gift.",
+  "Thank you, Brendan, for the wonderful birthday gift.",
+  "Thank you, Ali, for the wonderful birthday gift."
+];
 ```
 
 ## The `while` loop
