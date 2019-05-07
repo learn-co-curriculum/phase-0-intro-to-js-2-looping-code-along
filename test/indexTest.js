@@ -9,26 +9,9 @@ describe( 'index.js', () => {
 
   describe( 'writeCard()', () => {
 
-    afterEach( () => {
-      spy.restore();
-    } );
-
-    it( 'invokes console.log() once for each element in the passed-in array', () => {
-      writeCard( [ 'Lisa', 'Kaitlin', 'Jan' ], 'surprise' );
-
-      expect( spy.callCount )
-        .to.eq( 3 );
-    } );
-
-    it( 'logs a thank you message for each name in the provided array', () => {
-      writeCard( [ 'Joe', 'Gabe' ], 'birthday' );
-
-      expect( spy.calledWithExactly( 'Thank you, Joe, for the wonderful birthday gift!' ), "Thank you, Joe, for the wonderful birthday gift!" )
-        .to.be
-        .true;
-      expect( spy.calledWithExactly( 'Thank you, Gabe, for the wonderful birthday gift!' ), "Thank you, Gabe, for the wonderful birthday gift!" )
-        .to.be
-        .true;
+    it( 'returns an array of thank you messages for each name provided to the function', () => {
+      expect( writeCard( [ 'Lisa', 'Kaitlin', 'Jan' ], 'surprise' ) )
+        .to.deep.eq( [ 'Thank you, Lisa, for the wonderful surprise gift!', 'Thank you, Kaitlin, for the wonderful surprise gift!', 'Thank you, Jan, for the wonderful surprise gift!' ] );
     } );
   } );
 
