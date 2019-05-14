@@ -207,7 +207,7 @@ function wrapGifts(gifts) {
   let i = 0; // the initialization moved OUTSIDE the body of the loop!
   while (i < gifts.length) {
     console.log(`Wrapped ${gifts[i]} and added a bow!`);
-    i++; // the iteration move INSIDE the body of the loop!
+    i++; // the iteration moves INSIDE the body of the loop!
   }
 
   return gifts;
@@ -224,7 +224,7 @@ Notice that we've just moved the initialization and iteration statements -
 declaring the `i` variable outside the loop, and now incrementing it _inside_
 the loop.
 
-> **CAUTION**: When using `while` loops, it is easy forget to involve iteration.
+> **CAUTION**: When using `while` loops, it is easy to forget to involve iteration.
 > Leaving iteration out can result in a condition that _always_ evaluate to
 > `true`, causing an infinite loop!
 
