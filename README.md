@@ -157,7 +157,7 @@ literals.
 
 In the previous section, the `wrapGift()` function allowed us to take any array
 of gifts and loop over them, logging our own message. Let's practice that with a
-slightly different idea. To compliment our gift wrapping function, your task is
+slightly different idea. To complement our gift wrapping function, your task is
 to create a thank you card creator.
 
 In `index.js`, build a function named `writeCards()` that accepts two arguments:
@@ -178,9 +178,9 @@ Would produce the following array:
 
 ```js
 [
-  "Thank you, Ada, for the wonderful birthday gift.",
-  "Thank you, Brendan, for the wonderful birthday gift.",
-  "Thank you, Ali, for the wonderful birthday gift."
+  "Thank you, Ada, for the wonderful birthday gift!",
+  "Thank you, Brendan, for the wonderful birthday gift!",
+  "Thank you, Ali, for the wonderful birthday gift!"
 ];
 ```
 
