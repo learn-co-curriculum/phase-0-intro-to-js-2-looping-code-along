@@ -16,12 +16,15 @@ of the gift, tape it together, and add a nice little card. Then we set the
 wrapped gift aside and moved onto the next gift.
 
 In programming terms, we can think of our **collection** of gifts as an
-**array** and the act of wrapping them as a function. For example:
+**`Array`** and the act of wrapping them as a function. For example:
 
 ```js
 const gifts = ["teddy bear", "drone", "doll"];
 
 function wrapGift(gift) {
+  # For Ruby or Pythonistas, note that the " is now a ` (back-tick)
+  # We'll discuss interpolation in detail elsewhere, but note that
+  # JavaScript uses ` like Ruby uses ".
   console.log(`Wrapped ${gift} and added a bow!`);
 }
 ```
@@ -287,7 +290,7 @@ each loop so that the loop eventually terminates!
 ## Assignment
 
 To get more acquainted with `while`, your task is to write a function,
-`countdown`, that takes in any positive integer and, starting from that number,
+`countDown`, that takes in any positive integer and, starting from that number,
 counts down to zero using `console.log()`. So, when written if you were to run
 
 ```js
