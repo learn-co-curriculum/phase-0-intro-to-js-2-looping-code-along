@@ -294,7 +294,7 @@ To get more acquainted with `while`, your task is to write a function,
 counts down to zero using `console.log()`. So, when written if you were to run
 
 ```js
-countdown(10);
+countDown(10);
 ```
 
 It would actually log _11_ times, including 10:
