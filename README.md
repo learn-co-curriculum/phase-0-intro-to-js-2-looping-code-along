@@ -72,7 +72,7 @@ for ([initialization]; [condition]; [iteration]) {
   - A statement executed at the end of each iteration. Typically, this will involve
     incrementing or decrementing a counter, bringing the loop ever closer to
     completion.
-  - Loop body
+- Loop body
   - Code that runs on each pass through the loop.
 
 **_Usage_**: Use a `for` loop when you know exactly how many times you want the
