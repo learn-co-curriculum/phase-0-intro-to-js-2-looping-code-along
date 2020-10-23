@@ -334,4 +334,3 @@ are able to discern the nuanced usage between them.
 [do...while]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#do...while_statement
 [loops and iteration]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-looping-and-iteration-looping-code-along'>Looping Code-along</a> on Learn.co and start learning to code for free.</p>
