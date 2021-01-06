@@ -13,7 +13,7 @@ Sometimes, we need to do things repeatedly. Let's say we have a bunch of gifts
 to wrap. They all happen to be the same size and shape, so for every gift, we
 need to cut a similarly sized piece of wrapping paper, fold it up over the edges
 of the gift, tape it together, and add a nice little card. Then we set the
-wrapped gift aside and moved onto the next gift.
+wrapped gift aside and move on to the next gift.
 
 In programming terms, we can think of our **collection** of gifts as an
 **`Array`** and the act of wrapping them as a function. For example:
@@ -22,9 +22,9 @@ In programming terms, we can think of our **collection** of gifts as an
 const gifts = ["teddy bear", "drone", "doll"];
 
 function wrapGift(gift) {
-  # For Ruby or Pythonistas, note that the " is now a ` (back-tick)
-  # We'll discuss interpolation in detail elsewhere, but note that
-  # JavaScript uses ` like Ruby uses ".
+  // For Ruby or Pythonistas, note that the " is now a ` (back-tick)
+  // We'll discuss interpolation in detail elsewhere, but note that
+  // JavaScript uses ` like Ruby uses ".
   console.log(`Wrapped ${gift} and added a bow!`);
 }
 ```
@@ -99,16 +99,16 @@ for (let age = 30; age < 40; age++) {
 // LOG: I'm 39 years old. Happy birthday to me!
 ```
 
-In the above code, `let age = 30` is the **initialization**, as we create a
+In the above code, `let age = 30` is the **initialization**: we're creating a
 variable, `age`, that we'll use in the next three phases of the loop. Notice
 that we use `let` instead of `const` because we need to increment the value of
 `age`.
 
 The **condition** for the above loop is `age < 40`, or, in other words, "Run the
 code in the loop body until `age` is NOT less than `40`." As long as the
-condition evaluates to `true`, execute the code in the loop body, increment the
-value of `age`, and then reevaluate the condition. As soon as the condition
-evaluates to `false`, exit the loop.
+condition evaluates to `true`, the code in the loop body is executed, the value
+of `age` is incremented, and the condition is reevaluated. As soon as the
+condition evaluates to `false`, exit the loop.
 
 The **iteration** is `age++`, which increments the value of `age` by `1` after
 every pass through the loop. We initialized `age` as `30`, and it retains that
@@ -147,11 +147,12 @@ than `gifts.length` (`3` in the above example). Our iteration, `i++`, increments
 our counter by `1` at the end of each pass through the loop.
 
 In our loop body, notice that we reference `gifts[i]`. Since `i` starts out as
-`0`, during the first pass through the loop `gifts[i]` is `gifts[0]` is `'teddy bear'`. During the second pass through the loop, `gifts[i]` is `gifts[1]` is
-`'drone'`. And during the final pass through the loop, `gifts[i]` is `gifts[2]`,
-which is `'doll'`. After the third pass through the loop, we increment `i` to
-`3`, which is no longer less than `gifts.length`. Our condition evaluates to
-`false`, and we exit the loop.
+`0`, during the first pass through the loop `gifts[i]` is `gifts[0]`, which is
+`'teddy bear'`. During the second pass through the loop, `gifts[i]` is
+`gifts[1]`, which is `'drone'`. And during the final pass through the loop,
+`gifts[i]` is `gifts[2]`, which is `'doll'`. After the third pass through the
+loop, we increment `i` to `3`, which is no longer less than `gifts.length`. Our
+condition evaluates to `false`, and we exit the loop.
 
 We'll encounter `for` loops again when we learn about iterating through object
 literals.
@@ -207,7 +208,7 @@ wrapping example using a `while` loop and achieve the exact same result:
 const gifts = ["teddy bear", "drone", "doll"];
 
 function wrapGifts(gifts) {
-  let i = 0; // the initialization moved OUTSIDE the body of the loop!
+  let i = 0; // the initialization moves OUTSIDE the body of the loop!
   while (i < gifts.length) {
     console.log(`Wrapped ${gifts[i]} and added a bow!`);
     i++; // the iteration moves INSIDE the body of the loop!
@@ -223,16 +224,14 @@ wrapGifts(gifts);
 // => ["teddy bear", "drone", "doll"]
 ```
 
-Notice that we've just moved the initialization and iteration statements -
-declaring the `i` variable outside the loop, and now incrementing it _inside_
+Notice that we've just moved the initialization and iteration statements &mdash;
+declaring the `i` variable _outside_ the loop, and now incrementing it _inside_
 the loop.
 
-> **CAUTION**: When using `while` loops, it is easy to forget to involve iteration.
-> Leaving iteration out can result in a condition that _always_ evaluate to
-> `true`, causing an infinite loop!
+> **CAUTION**: When using `while` loops, it is easy to forget to involve iteration. Leaving iteration out can result in a condition that _always_ evaluate to `true`, causing an infinite loop!
 
 Because of their design, `while` loops are sometimes used when we _want_
-a loop to run an indeterminate amount of times. If we were pseudocoding out a
+a loop to run an indeterminate number of times. If we were pseudocoding out a
 program for planting a garden, we could use `while` to organize the work:
 
 ```js
@@ -284,14 +283,14 @@ your purposes, then go ahead and try a `while` or [`do...while`][do...while]
 loop. Also, remember that you can always refer to the
 [documentation on these loops][loops and iteration] at any time.
 
-Just don't forget - with `while`, make sure you are updating the condition on
-each loop so that the loop eventually terminates!
+Just don't forget &mdash; with `while`, make sure you are updating the condition
+on each loop so that the loop eventually terminates!
 
 ## Assignment
 
 To get more acquainted with `while`, your task is to write a function,
 `countDown`, that takes in any positive integer and, starting from that number,
-counts down to zero using `console.log()`. So, when written if you were to run
+counts down to zero using `console.log()`. So, when written if you were to run:
 
 ```js
 countDown(10);
