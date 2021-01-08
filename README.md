@@ -12,7 +12,7 @@
 In an earlier lesson, we learned about _repetition statements_ &mdash;
 statements that allow us to break out of the default sequence and repeat a
 section of code multiple times. We also learned about two of JavaScript's
-repetition constructs: the _while_ loop and the _do while_ loop. In this lesson
+repetition constructs: the _while_ loop and the _do...while_ loop. In this lesson
 we will learn about a third: the _for_ loop.
 
 Let's say we have a bunch of gifts to wrap. They all happen to be the same size
@@ -77,15 +77,15 @@ for ([initialization]; [condition]; [iteration]) {
 - Loop body
   - Code that runs on each pass through the loop.
 
-**_Usage_**: Use a `for` loop when you know exactly how many times you want the
-loop to run (for example, when you're looping through elements in an array).
+**_Usage_**: Use a `for` loop when you know how many times you want the loop to
+run (for example, when you're looping through elements in an array).
 
 #### Examples
 
 Let's take a look at an example and get some practice using the Node debugger.
 Enter the code below into the `index.js` file.
 
-> **Note:** You can, of course, copy/paste the code rather than typing it in yourself, but we recommend typing it in for now. The act of typing code develops muscle memory and helps your brain learn and internalize the syntax.
+> **Note:** You can, of course, copy/paste the code rather than typing it in yourself, but we recommend typing it in for now. The act of typing code develops muscle memory and helps your brain understand and internalize the syntax.
 
 ```js
 for (let age = 30; age < 40; age++) {
@@ -127,10 +127,10 @@ the breakpoint. It should look like this:
 ![Debugger Output 2](https://curriculum-content.s3.amazonaws.com/phase-0/looping-code-along/debugger_2.png)
 
 Note, in the first line, that the message has been logged and that `age` is
-equal to 30. To verify that, enter `repl` in the terminal to open the REPL, then
-enter `age`. You should see `30` output. Now type `Ctrl-C` to exit the repl,
-them enter `cont` at the `debug` prompt to advance to the next iteration of the
-loop. You should now see the following:
+equal to 30. To verify that, enter `repl` at the `debug` prompt to open the
+REPL, then enter `age`. You should see `30` output. Now type `Ctrl-C` to exit
+the repl, and enter `cont` at the `debug` prompt to advance to the next
+iteration of the loop. You should see the following:
 
 ![Debugger Output 3](https://curriculum-content.s3.amazonaws.com/phase-0/looping-code-along/debugger_3.png)
 
@@ -188,9 +188,6 @@ Wrapped drone and added a bow!
 Wrapped doll and added a bow!
 ```
 
-We'll encounter `for` loops again when we learn about iterating through object
-literals.
-
 ### Assignment
 
 In the previous section, the `wrapGift()` function allowed us to take any array
@@ -224,7 +221,7 @@ Would produce the following array:
 
 **Top Tip**: The debugger isn't just for debugging code &mdash; you can also use
 it to help you write your function! Try building the structure of the loop,
-putting the `debugger;` inside the loop body. Even before you start writing the
+putting the `debugger` inside the loop body. Even before you start writing the
 code, you can enter the debugger's REPL and try out code until you figure out
 how to create the message and add it to an array. Once it's working in the REPL,
 transfer the code to `index.js`, exit the debugger, and run the tests.
@@ -273,7 +270,7 @@ loop.
 > **CAUTION**: When using `while` loops, it is easy to forget to involve iteration. Leaving iteration out can result in a condition that _always_ evaluates to `true`, causing an infinite loop!
 
 Using a `while` loop enables us to check conditions that aren't based on a
-counter. Take a look at the following **[pseudocode][]** for an example of how
+counter. Take a look at the following *[pseudocode][]* for an example of how
 we could use `while` in a program for planting a garden:
 
 ```js
@@ -321,9 +318,9 @@ If you're feeling a bit lost about when to use a `for` vs. a `while` loop, take
 a deep breath. Most of the time, a regular `for` loop will suffice. It's by far
 the most common looping construct in JavaScript. A general heuristic for
 choosing which loop to use is to first try a `for` loop. If that doesn't serve
-your purposes, then go ahead and try a `while` or [`do...while`][do...while]
-loop. Also, remember that you can always refer to the
-[documentation on these loops][loops and iteration] at any time.
+your purposes, then go ahead and try a `while` loop. Also, remember that you can
+always refer to the [documentation on these loops][loops and iteration] at any
+time.
 
 Just don't forget: with `while`, make sure you are updating the condition
 on each loop so that the loop eventually terminates!
@@ -367,6 +364,5 @@ are able to discern the nuanced differences in usage between them.
   - [`while` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
   - [Loops and iteration][loops and iteration]
 
-[do...while]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#do...while_statement
 [loops and iteration]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
 [pseudocode]: https://en.wikipedia.org/wiki/Pseudocode
