@@ -219,12 +219,7 @@ Would produce the following array:
 ];
 ```
 
-**Top Tip**: The debugger isn't just for debugging code &mdash; you can also use
-it to help you write your function! Try building the structure of the loop,
-putting the `debugger` inside the loop body. Even before you start writing the
-code, you can enter the debugger's REPL and try out code until you figure out
-how to create the message and add it to an array. Once it's working in the REPL,
-transfer the code to `index.js`, exit the debugger, and run the tests.
+> **Top Tip**: The debugger isn't just for debugging code &mdash; you can also use it to help you write your function! Try building the structure of the loop, putting the `debugger` inside the loop body. Even before you start writing the code, you can enter the debugger's REPL and try out code until you figure out how to create the message and add it to an array. Once it's working in the REPL, transfer the code to `index.js`, exit the debugger, and run the tests.
 
 ## The `while` loop
 
