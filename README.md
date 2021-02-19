@@ -9,7 +9,7 @@
 
 ## Introduction
 
-In an earlier lesson, we learned about _repetition statements_ &mdash;
+In an earlier lesson, we learned about _repetition statements_ —
 statements that allow us to break out of the default sequence and repeat a
 section of code multiple times. We also learned about two of JavaScript's
 repetition constructs: the _while_ loop and the _do...while_ loop. In this lesson
@@ -219,7 +219,7 @@ Would produce the following array:
 ];
 ```
 
-> **Top Tip**: The debugger isn't just for debugging code &mdash; you can also use it to help you write your function! Try building the structure of the loop, putting the `debugger` inside the loop body. Even before you start writing the code, you can enter the debugger's REPL and try out code until you figure out how to create the message and add it to an array. Once it's working in the REPL, transfer the code to `index.js`, exit the debugger, and run the tests.
+> **Top Tip**: The debugger isn't just for debugging code — you can also use it to help you write your function! Try building the structure of the loop, putting the `debugger` inside the loop body. Even before you start writing the code, you can enter the debugger's REPL and try out code until you figure out how to create the message and add it to an array. Once it's working in the REPL, transfer the code to `index.js`, exit the debugger, and run the tests.
 
 ## The `while` loop
 
@@ -258,7 +258,7 @@ wrapGifts(gifts);
 // => ["teddy bear", "drone", "doll"]
 ```
 
-Notice that we've just moved the initialization and iteration statements &mdash;
+Notice that we've just moved the initialization and iteration statements —
 declaring the `i` variable _outside_ the loop, and incrementing it _inside_ the
 loop.
 
