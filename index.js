@@ -14,3 +14,4 @@ function countDown(number) {
     while (i <= number) {
         console.log(number--)
     }
+}
