@@ -195,21 +195,24 @@ of gifts and loop over them, logging our own message. Let's practice that with a
 slightly different idea. To complement our gift wrapping function, your task is
 to create a thank you card creator.
 
+> **Note**: Recall the difference between logging and returning values from a function. When we log information we are simply outputting text to a terminal or console. When we return data from a function we will be able to reference and use that information elsewhere because the data is being passed out of the function.
+
 In `index.js`, build a function named `writeCards()` that accepts two arguments:
 an array of string names, and an event name. Create a `for` loop with a counter
 that starts at `0` and increments at the end of each loop. The condition should
-halt the `for` loop after the last name in the array is printed out in the loop
-body.
+stop once the `for` loop has iterated over the length of the array.
 
-Inside the loop, create a custom message for each name from the provided array,
-thanking that person for their gift. Collect the messages in an array and return
-this array. For example:
+Like our previous `wrapGift()` function, when inside the loop, create a custom message for each name from the provided array using string interpolation,
+thanking that person for their gift. Collect the messages in a _new_ array and **return**
+this array at the end of the function, after the loop has ended. (Make sure to refresh on how we can add an element to an array.) An example of how the function works is shown below:
 
 ```js
 writeCards(["Ada", "Brendan", "Ali"], "birthday");
 ```
 
-Would produce the following array:
+In the function call above, an array of three names `["Ada", "Brendan", "Ali"]` is inserted as the first argument and a separate string of `"birthday"` is the second argument. If the function has been set up properly then those three names will be used with string interpolation to build out three 'thank you' messages. Those messages, one for each pass through the loop, need to be added to a new array that you create. Once the loop finishes, and all of the messages have been added to the new array, you need to ensure the new array is being returned from the function.
+
+A working `writeCards()` function would produce the following array as the return value:
 
 ```js
 [
