@@ -190,7 +190,7 @@ Wrapped doll and added a bow!
 
 ### Assignment
 
-In the previous section, the `wrapGift()` function allowed us to take any array
+In the previous section, the `wrapGifts()` function allowed us to take any array
 of gifts and loop over them, logging our own message. Let's practice that with a
 slightly different idea. To complement our gift wrapping function, your task is
 to create a thank you card creator.
@@ -202,7 +202,7 @@ an array of string names, and an event name. Create a `for` loop with a counter
 that starts at `0` and increments at the end of each loop. The condition should
 stop once the `for` loop has iterated over the length of the array.
 
-Like our previous `wrapGift()` function, when inside the loop, create a custom message for each name from the provided array using string interpolation,
+Like our previous `wrapGifts()` function, when inside the loop, create a custom message for each name from the provided array using string interpolation,
 thanking that person for their gift. Collect the messages in a _new_ array and **return**
 this array at the end of the function, after the loop has ended. (Make sure to refresh on how we can add an element to an array.) An example of how the function works is shown below:
 
