@@ -199,20 +199,31 @@ to create a thank you card creator.
 
 In `index.js`, build a function named `writeCards()` that accepts two arguments:
 an array of string names, and an event name. Create a `for` loop with a counter
-that starts at `0` and increments at the end of each loop. The condition should
-stop once the `for` loop has iterated over the length of the array.
+that starts at `0` and increments at the end of each loop. The `for` loop should
+stop once it has iterated over the length of the array.
 
-Like our previous `wrapGifts()` function, when inside the loop, create a custom message for each name from the provided array using string interpolation,
-thanking that person for their gift. Collect the messages in a _new_ array and **return**
-this array at the end of the function, after the loop has ended. (Make sure to refresh on how we can add an element to an array.) An example of how the function works is shown below:
+As with our previous `wrapGifts()` function, you will create a custom message
+for each name inside the loop. Unlike that example, however, instead of simply
+logging the messages to the console, you will collect them in a _new_ array and
+**return** this array at the end of the function. (Refer back to the Array
+Methods lesson if you need a refresher on how we can add an element to an
+array.) The overall process should be:
+
+1. create a new, empty array to hold the messages;
+2. iterate through the input array and, inside the loop, build out the 'thank
+   you' message for each name using string interpolation, then add that message
+   to the new array you created;
+3. after the loop finishes and all of the messages have been added to the new
+   array, return the new array.
+
+Here is an example of what a call to the `writeCards()` function might look like:
 
 ```js
 writeCards(["Ada", "Brendan", "Ali"], "birthday");
 ```
 
-In the function call above, an array of three names `["Ada", "Brendan", "Ali"]` is inserted as the first argument and a separate string of `"birthday"` is the second argument. If the function has been set up properly then those three names will be used with string interpolation to build out three 'thank you' messages. Those messages, one for each pass through the loop, need to be added to a new array that you create. Once the loop finishes, and all of the messages have been added to the new array, you need to ensure the new array is being returned from the function.
-
-A working `writeCards()` function would produce the following array as the return value:
+If we were to call the function using this function call, it should produce the
+following array as the return value:
 
 ```js
 [
