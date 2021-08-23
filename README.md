@@ -115,8 +115,7 @@ loop, we increment `age` to `32`, and so on.
 The **loop body** is the set of statements that we want to run when the
 condition evaluates to `true`.
 
-Let's take a look at what's happening in our loop using debugger. Run `node
-inspect index.js` in the terminal to start the debugger. You should see the
+Let's take a look at what's happening in our loop using debugger. Run `node inspect index.js` in the terminal to start the debugger. You should see the
 following:
 
 ![Debugger Output 1](https://curriculum-content.s3.amazonaws.com/phase-0/looping-code-along/debugger_1.png)
@@ -140,8 +139,7 @@ can verify the value of `age` by entering the REPL and typing `age` at the
 prompt, then exit the REPL to continue stepping through. When you're done, enter
 `.exit` or `Ctrl-C` twice to exit the debugger.
 
-Now let's remove `debugger;` from our code and execute it by running `node
-index.js`. You should see the following:
+Now let's remove `debugger;` from our code and execute it by running `node index.js`. You should see the following:
 
 ![Happy Birthday logged](https://curriculum-content.s3.amazonaws.com/phase-0/looping-code-along/happy-birthday-to-me.png)
 
@@ -172,15 +170,13 @@ than `gifts.length` (`3` in the above example). Our iteration, `i++`, increments
 our counter by `1` at the end of each pass through the loop.
 
 Run `node inspect index.js` in the terminal to enter the debugger, and `cont` at
-the `debug` prompt to advance to the breakpoint. You should see `Wrapped teddy
-bear and added a bow!` logged. In our loop body, we reference `gifts[i]`. Since
+the `debug` prompt to advance to the breakpoint. You should see `Wrapped teddy bear and added a bow!` logged. In our loop body, we reference `gifts[i]`. Since
 `i` starts out as `0`, during the first pass through the loop `gifts[i]` is
 `gifts[0]`, which is `'teddy bear'`. Continue stepping through the loop by
 entering `cont` at the`debug` prompt and remember you can enter the REPL at any
 point to check the values of our variables, `i` and `gifts[i]`.
 
-When you're done, remove the `debugger` and execute the code by running `node
-index.js`. You should see the following logged to the terminal:
+When you're done, remove the `debugger` and execute the code by running `node index.js`. You should see the following logged to the terminal:
 
 ```text
 Wrapped teddy bear and added a bow!
@@ -229,7 +225,7 @@ following array as the return value:
 [
   "Thank you, Ada, for the wonderful birthday gift!",
   "Thank you, Brendan, for the wonderful birthday gift!",
-  "Thank you, Ali, for the wonderful birthday gift!"
+  "Thank you, Ali, for the wonderful birthday gift!",
 ];
 ```
 
@@ -279,7 +275,7 @@ loop.
 > **CAUTION**: When using `while` loops, it is easy to forget to involve iteration. Leaving iteration out can result in a condition that _always_ evaluates to `true`, causing an infinite loop!
 
 Using a `while` loop enables us to check conditions that aren't based on a
-counter. Take a look at the following *[pseudocode][]* for an example of how
+counter. Take a look at the following _[pseudocode][]_ for an example of how
 we could use `while` in a program for planting a garden:
 
 ```js
@@ -362,10 +358,10 @@ machine. To preserve your solution on your GitHub fork, you will need to stage t
 changes you've made, commit them, and push the commit up to GitHub. Use
 the following commands to do this:
 
-```sh
-git add .
-git commit -m "Completed assignment"
-git push
+```console
+$ git add .
+$ git commit -m "Completed assignment"
+$ git push
 ```
 
 If you visit your fork on GitHub, you should now see that _you've_ made the most
