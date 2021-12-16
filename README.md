@@ -79,12 +79,15 @@ for ([initialization]; [condition]; [iteration]) {
 **_Usage_**: Use a `for` loop when you know how many times you want the loop to
 run (for example, when you're looping through elements in an array).
 
-#### Examples
+### Examples
 
 Let's take a look at an example and get some practice using the Node debugger.
 Enter the code below into the `index.js` file.
 
-> **Note:** You can, of course, copy/paste the code rather than typing it in yourself, but we recommend typing it in for now. The act of typing code develops muscle memory and helps your brain understand and internalize the syntax.
+> **Note:** You can, of course, copy/paste the code rather than typing it in
+> yourself, but we recommend typing it in for now. The act of typing code
+> develops muscle memory and helps your brain understand and internalize the
+> syntax.
 
 ```js
 for (let age = 30; age < 40; age++) {
@@ -114,8 +117,9 @@ loop, we increment `age` to `32`, and so on.
 The **loop body** is the set of statements that we want to run when the
 condition evaluates to `true`.
 
-Let's take a look at what's happening in our loop using debugger. Run `node inspect index.js` in the terminal to start the debugger. You should see the
-following:
+Let's take a look at what's happening in our loop using debugger. Run
+`node inspect index.js` in the terminal to start the debugger. You should see
+the following:
 
 ![Debugger Output 1](https://curriculum-content.s3.amazonaws.com/phase-0/looping-code-along/debugger_1.png)
 
@@ -138,7 +142,8 @@ can verify the value of `age` by entering the REPL and typing `age` at the
 prompt, then exit the REPL to continue stepping through. When you're done, enter
 `.exit` or `Ctrl-C` twice to exit the debugger.
 
-Now let's remove `debugger;` from our code and execute it by running `node index.js`. You should see the following:
+Now let's remove `debugger;` from our code and execute it by running
+`node index.js`. You should see the following:
 
 ![Happy Birthday logged](https://curriculum-content.s3.amazonaws.com/phase-0/looping-code-along/happy-birthday-to-me.png)
 
@@ -169,13 +174,15 @@ than `gifts.length` (`3` in the above example). Our iteration, `i++`, increments
 our counter by `1` at the end of each pass through the loop.
 
 Run `node inspect index.js` in the terminal to enter the debugger, and `cont` at
-the `debug` prompt to advance to the breakpoint. You should see `Wrapped teddy bear and added a bow!` logged. In our loop body, we reference `gifts[i]`. Since
-`i` starts out as `0`, during the first pass through the loop `gifts[i]` is
-`gifts[0]`, which is `'teddy bear'`. Continue stepping through the loop by
-entering `cont` at the`debug` prompt and remember you can enter the REPL at any
-point to check the values of our variables, `i` and `gifts[i]`.
+the `debug` prompt to advance to the breakpoint. You should see
+`Wrapped teddy bear and added a bow!` logged. In our loop body, we reference
+`gifts[i]`. Since `i` starts out as `0`, during the first pass through the loop
+`gifts[i]` is `gifts[0]`, which is `'teddy bear'`. Continue stepping through the
+loop by entering `cont` at the`debug` prompt and remember you can enter the REPL
+at any point to check the values of our variables, `i` and `gifts[i]`.
 
-When you're done, remove the `debugger` and execute the code by running `node index.js`. You should see the following logged to the terminal:
+When you're done, remove the `debugger` and execute the code by running
+`node index.js`. You should see the following logged to the terminal:
 
 ```text
 Wrapped teddy bear and added a bow!
@@ -190,7 +197,11 @@ of gifts and loop over them, logging our own message. Let's practice that with a
 slightly different idea. To complement our gift wrapping function, your task is
 to create a thank you card creator.
 
-> **Note**: Recall the difference between logging and returning values from a function. When we log information we are simply outputting text to a terminal or console. When we return data from a function we will be able to reference and use that information elsewhere because the data is being passed out of the function.
+> **Note**: Recall the difference between logging and returning values from a
+> function. When we log information we are simply outputting text to a terminal
+> or console. When we return data from a function we will be able to reference
+> and use that information elsewhere because the data is being passed out of the
+> function.
 
 In `index.js`, build a function named `writeCards()` that accepts two arguments:
 an array of string names, and an event name. Create a `for` loop with a counter
@@ -214,7 +225,7 @@ array.) The overall process should be:
 Here is an example of what a call to the `writeCards()` function might look like:
 
 ```js
-writeCards(["Ada", "Brendan", "Ali"], "birthday");
+writeCards(["Charlie", "Samip", "Ali"], "birthday");
 ```
 
 If we were to call the function using this function call, it should produce the
@@ -222,13 +233,18 @@ following array as the return value:
 
 ```js
 [
-  "Thank you, Ada, for the wonderful birthday gift!",
-  "Thank you, Brendan, for the wonderful birthday gift!",
+  "Thank you, Charlie, for the wonderful birthday gift!",
+  "Thank you, Samip, for the wonderful birthday gift!",
   "Thank you, Ali, for the wonderful birthday gift!",
 ];
 ```
 
-> **Top Tip**: The debugger isn't just for debugging code — you can also use it to help you write your function! Try building the structure of the loop, putting the `debugger` inside the loop body. Even before you start writing the code, you can enter the debugger's REPL and try out code until you figure out how to create the message and add it to an array. Once it's working in the REPL, transfer the code to `index.js`, exit the debugger, and run the tests.
+> **Top Tip**: The debugger isn't just for debugging code — you can also use it
+> to help you write your function! Try building the structure of the loop,
+> putting the `debugger` inside the loop body. Even before you start writing the
+> code, you can enter the debugger's REPL and try out code until you figure out
+> how to create the message and add it to an array. Once it's working in the
+> REPL, transfer the code to `index.js`, exit the debugger, and run the tests.
 
 ## The `while` loop
 
