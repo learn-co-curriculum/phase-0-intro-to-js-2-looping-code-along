@@ -366,6 +366,13 @@ counts down to zero using `console.log()`. Note that this means that running
 0
 ```
 
+Remember the workflow:
+
+1. Run the tests using `learn test`.
+2. Read the errors; vocalize what they're asking you to do.
+3. Write code; repeat steps 1 and 2 often until a test passes.
+4. Repeat as needed for the remaining tests.
+
 ## Conclusion
 
 After some time programming in JavaScript, writing a `for` loop will come as
