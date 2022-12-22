@@ -48,9 +48,9 @@ action **once** and perform the action on **every item in the collection**.
 
 This is a code-along, so follow along with the instructions in each section.
 There are tests to make sure you're coding your solutions correctly. If you
-haven't already, fork and clone this lab into your local environment. Navigate
-into its directory in the terminal, then run `code .` to open the files in
-Visual Studio Code.
+haven't already, **fork and clone** this lab into your local environment.
+Navigate into its directory in the terminal, then run `code .` to open the files
+in Visual Studio Code.
 
 ## The `for` loop
 
@@ -368,10 +368,11 @@ counts down to zero using `console.log()`. Note that this means that running
 
 Remember the workflow:
 
-1. Run the tests using `learn test`.
-2. Read the errors; vocalize what they're asking you to do.
-3. Write code; repeat steps 1 and 2 often until a test passes.
-4. Repeat as needed for the remaining tests.
+1. Install the dependencies using `npm install`.
+2. Run the tests using `npm test`.
+3. Read the errors; vocalize what they're asking you to do.
+4. Write code; repeat steps 2 and 3 often until a test passes.
+5. Repeat as needed for the remaining tests.
 
 ## Conclusion
 
