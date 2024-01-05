@@ -50,3 +50,8 @@ describe( 'index.js', () => {
     } );
   } );
 } );
+function countDown(number) {
+  for (let i = number; i >= 0; i--) {
+    console.log(i);
+  }
+}
