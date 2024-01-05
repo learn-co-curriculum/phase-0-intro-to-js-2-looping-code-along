@@ -1,4 +1,3 @@
-// Code your solutions in this file
 function writeCards(names, event) {
     let messages = [];
     for (let name of names) {
