@@ -1,21 +1,31 @@
-const chai = require('chai')
-global.expect = chai.expect
-const fs = require('fs')
-const jsdom = require('mocha-jsdom')
-const path = require('path')
+const chai = require("chai");
+global.expect = chai.expect;
+const fs = require("fs");
+const path = require("path");
 const babel = require("@babel/core");
-const url = "http://localhost"
+require("jsdom-global")();
 
-const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8')
+const url = "http://localhost";
+const html = fs.readFileSync(
+  path.resolve(__dirname, "..", "index.html"),
+  "utf-8"
+);
 
 const babelResult = babel.transformFileSync(
-  path.resolve(__dirname, '..', 'index.js'), {
-    presets: ['@babel/env']
+  path.resolve(__dirname, "..", "index.js"),
+  {
+    presets: ["@babel/env"],
   }
 );
 
-const src = babelResult.code
+const src = babelResult.code;
 
-jsdom({
-  html, src, url
-});
+document.documentElement.innerHTML = html;
+eval(src);
+
+// Import functions from index.js
+const { writeCards, countDown } = require("../index.js");
+
+// Attach functions to the global scope
+global.writeCards = writeCards;
+global.countDown = countDown;
