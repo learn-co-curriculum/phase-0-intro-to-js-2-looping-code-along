@@ -6,3 +6,9 @@ const writeCards = (nameArray, typeOfGift) => {
     }
     return thankYouMessages
 }
+
+const countDown = (startingNumber) => {
+    for (let i = startingNumber; i >= 0; i--) {
+        console.log(i);
+    }
+}
